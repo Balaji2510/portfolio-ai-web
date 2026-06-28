@@ -1,0 +1,101 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+
+    <div class="container">
+
+        <a routerLink="/" class="logo">
+
+            <span class="gradient">Portfolio</span>AI
+
+        </a>
+
+        <nav class="desktop-menu">
+
+            <a routerLink="/" routerLinkActive="active">
+                Home
+            </a>
+
+            <a routerLink="/about" routerLinkActive="active">
+                About
+            </a>
+
+            <a routerLink="/skills" routerLinkActive="active">
+                Skills
+            </a>
+
+            <a routerLink="/experience" routerLinkActive="active">
+                Experience
+            </a>
+
+            <a routerLink="/projects" routerLinkActive="active">
+                Projects
+            </a>
+
+            <a routerLink="/resume" routerLinkActive="active">
+                Resume
+            </a>
+
+            <a routerLink="/assistant" routerLinkActive="active">
+                AI Assistant
+            </a>
+
+            <a routerLink="/contact" routerLinkActive="active">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="actions">
+
+            <a
+                href="https://github.com/Balaji2510"
+                target="_blank">
+
+                GitHub
+
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/balajip2510"
+                target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <button
+                class="mobile-btn"
+                (click)="toggleMenu()">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+@if (mobileMenuOpen()) {
+
+<div class="mobile-menu">
+
+    <a routerLink="/" (click)="closeMenu()">Home</a>
+
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+
+    <a routerLink="/skills" (click)="closeMenu()">Skills</a>
+
+    <a routerLink="/experience" (click)="closeMenu()">Experience</a>
+
+    <a routerLink="/projects" (click)="closeMenu()">Projects</a>
+
+    <a routerLink="/resume" (click)="closeMenu()">Resume</a>
+
+    <a routerLink="/assistant" (click)="closeMenu()">AI Assistant</a>
+
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+
+</div>
+
+}

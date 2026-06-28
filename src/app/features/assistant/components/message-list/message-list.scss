@@ -1,0 +1,69 @@
+.message-container{
+
+    height:65vh;
+
+    overflow-y:auto;
+
+    padding:24px;
+
+    background:#F8FAFC;
+
+    scroll-behavior:smooth;
+
+}
+
+.empty{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#64748B;
+
+}
+
+.empty h2{
+
+    font-size:34px;
+
+    margin-bottom:20px;
+
+    color:#0F172A;
+
+}
+
+.empty p{
+
+    max-width:550px;
+
+    line-height:1.8;
+
+}
+
+.message-container::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.message-container::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:10px;
+
+}
+
+.message-container::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}

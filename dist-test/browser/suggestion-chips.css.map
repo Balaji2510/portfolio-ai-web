@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/assistant/components/suggestion-chips/suggestion-chips.scss"],
+  "sourcesContent": [".chips{\r\n\r\n    display:flex;\r\n\r\n    flex-wrap:wrap;\r\n\r\n    gap:12px;\r\n\r\n    padding:20px;\r\n\r\n}\r\n\r\nbutton{\r\n\r\n    padding:10px 18px;\r\n\r\n    border:none;\r\n\r\n    border-radius:30px;\r\n\r\n    background:#EEF2FF;\r\n\r\n    color:#4F46E5;\r\n\r\n    cursor:pointer;\r\n\r\n    transition:.3s;\r\n\r\n    font-weight:600;\r\n\r\n}\r\n\r\nbutton:hover{\r\n\r\n    background:#4F46E5;\r\n\r\n    color:white;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,WAAA;AAEA,aAAA;AAEA,OAAA;AAEA,WAAA;;AAIJ;AAEI,WAAA,KAAA;AAEA,UAAA;AAEA,iBAAA;AAEA,cAAA;AAEA,SAAA;AAEA,UAAA;AAEA,cAAA;AAEA,eAAA;;AAIJ,MAAA;AAEI,cAAA;AAEA,SAAA;;",
+  "names": []
+}

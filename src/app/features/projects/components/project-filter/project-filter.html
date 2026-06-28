@@ -1,0 +1,15 @@
+<div class="filters">
+
+    @for(filter of filters; track filter){
+
+        <button
+            (click)="select(filter)"
+            [class.active]="selected() === filter">
+
+            {{ filter }}
+
+        </button>
+
+    }
+
+</div>

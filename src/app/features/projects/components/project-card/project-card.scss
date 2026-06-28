@@ -1,0 +1,179 @@
+.project-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(15,23,42,.12);
+
+}
+
+.image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.image img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.featured{
+
+    position:absolute;
+
+    top:16px;
+
+    left:16px;
+
+    background:#4F46E5;
+
+    color:#fff;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.content{
+
+    padding:24px;
+
+}
+
+.content h3{
+
+    margin-bottom:12px;
+
+    font-size:24px;
+
+    color:#0F172A;
+
+}
+
+.content p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:24px;
+
+}
+
+.chips span{
+
+    padding:8px 14px;
+
+    background:#EEF2FF;
+
+    color:#4F46E5;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+}
+
+.actions a{
+
+    flex:1;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.github{
+
+    background:#111827;
+
+    color:#fff;
+
+}
+
+.github:hover{
+
+    background:#000;
+
+}
+
+.demo{
+
+    background:#4F46E5;
+
+    color:#fff;
+
+}
+
+.demo:hover{
+
+    background:#3730A3;
+
+}

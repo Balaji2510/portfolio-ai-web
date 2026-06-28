@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/about/components/profile-card/profile-card.scss"],
+  "sourcesContent": [".card{\r\n\r\n    background:white;\r\n\r\n    border-radius:20px;\r\n\r\n    padding:32px;\r\n\r\n    text-align:center;\r\n\r\n    box-shadow:0 10px 25px rgba(0,0,0,.08);\r\n\r\n}\r\n\r\nimg{\r\n\r\n    width:170px;\r\n\r\n    height:170px;\r\n\r\n    border-radius:50%;\r\n\r\n    object-fit:cover;\r\n\r\n    margin-bottom:20px;\r\n\r\n}\r\n\r\nh2{\r\n\r\n    margin-bottom:10px;\r\n\r\n}\r\n\r\nh4{\r\n\r\n    color:#4F46E5;\r\n\r\n    margin-bottom:20px;\r\n\r\n}\r\n\r\na{\r\n\r\n    color:#4F46E5;\r\n\r\n    text-decoration:none;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,cAAA;AAEA,iBAAA;AAEA,WAAA;AAEA,cAAA;AAEA,cAAA,EAAA,KAAA,KAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;;AAIJ;AAEI,SAAA;AAEA,UAAA;AAEA,iBAAA;AAEA,cAAA;AAEA,iBAAA;;AAIJ;AAEI,iBAAA;;AAIJ;AAEI,SAAA;AAEA,iBAAA;;AAIJ;AAEI,SAAA;AAEA,mBAAA;;",
+  "names": []
+}

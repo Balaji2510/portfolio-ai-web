@@ -1,0 +1,249 @@
+<footer>
+
+    <div class="container">
+
+        <div class="grid">
+
+            <!-- About -->
+
+            <div>
+
+                <h2>
+
+                    PortfolioAI
+
+                </h2>
+
+                <p>
+
+                    AI-Powered Developer Portfolio showcasing my
+                    expertise in Angular, Node.js, MongoDB, AWS,
+                    GraphQL, Artificial Intelligence and modern
+                    full-stack development.
+
+                </p>
+
+                <div class="social">
+
+                    <a
+                        href="https://github.com/Balaji2510"
+                        target="_blank"
+                        title="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a
+                        href="https://linkedin.com/in/balajip2510"
+                        target="_blank"
+                        title="LinkedIn">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                    </a>
+
+                    <a
+                        href="https://x.com/Balaji70795890"
+                        target="_blank"
+                        title="X">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+                    <a
+                        href="mailto:balajip2510@gmail.com"
+                        title="Email">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+
+            <div>
+
+                <h3>
+
+                    Navigation
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a routerLink="/">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/about">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/skills">
+
+                            Skills
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/experience">
+
+                            Experience
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/projects">
+
+                            Projects
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/resume">
+
+                            Resume
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/assistant">
+
+                            AI Assistant
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a routerLink="/contact">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Technologies -->
+
+            <div>
+
+                <h3>
+
+                    Technologies
+
+                </h3>
+
+                <div class="chips">
+
+                    @for(item of technologies; track item){
+
+                        <span>
+
+                            {{item}}
+
+                        </span>
+
+                    }
+
+                </div>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3>
+
+                    Contact
+
+                </h3>
+
+                <p>
+
+                    📧 balajip2510@gmail.com
+
+                </p>
+
+                <!-- <p>
+
+                    📱 +91 XXXXX XXXXX
+
+                </p> -->
+
+                <p>
+
+                    📍 Chennai, Tamil Nadu, India
+
+                </p>
+
+                <p>
+
+                    💼 Available for Full-Time Opportunities
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="bottom">
+
+            <p>
+
+                © {{ currentYear }} PortfolioAI. All Rights Reserved.
+
+            </p>
+
+            <button
+
+                class="top"
+
+                (click)="scrollToTop()">
+
+                ↑
+
+            </button>
+
+        </div>
+
+    </div>
+
+</footer>

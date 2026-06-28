@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/about/pages/about/about.scss"],
+  "sourcesContent": [".about-page{\r\n\r\ndisplay:grid;\r\n\r\ngrid-template-columns:350px 1fr;\r\n\r\ngap:50px;\r\n\r\npadding:100px 0;\r\n\r\nalign-items:start;\r\n\r\n}\r\n\r\n@media(max-width:992px){\r\n\r\n.about-page{\r\n\r\ngrid-template-columns:1fr;\r\n\r\n}\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEA,WAAA;AAEA,yBAAA,MAAA;AAEA,OAAA;AAEA,WAAA,MAAA;AAEA,eAAA;;AAIA,QAAA,WAAA;AAEA,GAhBA;AAkBA,2BAAA;;;",
+  "names": []
+}

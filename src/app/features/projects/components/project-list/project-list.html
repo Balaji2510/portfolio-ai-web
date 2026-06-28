@@ -1,0 +1,37 @@
+<section class="projects">
+
+    <div class="header">
+
+        <span class="tag">
+            Portfolio
+        </span>
+
+        <h2>
+
+            Featured Projects
+
+        </h2>
+
+        <p>
+
+            Here are some of my recent enterprise and AI projects.
+
+        </p>
+
+    </div>
+
+    <app-project-filter (filterChanged)="filterProjects($event)">
+    </app-project-filter>
+
+    <div class="grid">
+
+        @for(project of projects; track project.id){
+
+        <app-project-card [project]="project">
+        </app-project-card>
+
+        }
+
+    </div>
+
+</section>

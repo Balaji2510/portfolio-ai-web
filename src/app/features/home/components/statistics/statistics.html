@@ -1,0 +1,59 @@
+<section class="statistics">
+
+    <div class="container">
+
+        <div class="header">
+
+            <h2>
+
+                My Journey in Numbers
+
+            </h2>
+
+            <p>
+
+                A quick overview of my professional experience and achievements.
+
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            @for(stat of statistics; track stat.title){
+
+                <div class="card">
+
+                    <div class="icon">
+
+                        {{ stat.icon }}
+
+                    </div>
+
+                    <h2>
+
+                        {{ stat.value }}
+
+                    </h2>
+
+                    <h3>
+
+                        {{ stat.title }}
+
+                    </h3>
+
+                    <p>
+
+                        {{ stat.description }}
+
+                    </p>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/experience/components/timeline/timeline.scss"],
+  "sourcesContent": [".timeline{\r\n\r\n    max-width:1000px;\r\n\r\n    margin:auto;\r\n\r\n    padding:100px 20px;\r\n\r\n}\r\n\r\n.title{\r\n\r\n    text-align:center;\r\n\r\n    margin-bottom:60px;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,aAAA;AAEA,UAAA;AAEA,WAAA,MAAA;;AAIJ,CAAA;AAEI,cAAA;AAEA,iBAAA;;",
+  "names": []
+}

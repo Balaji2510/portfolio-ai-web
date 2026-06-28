@@ -1,0 +1,23 @@
+.about-page{
+
+display:grid;
+
+grid-template-columns:350px 1fr;
+
+gap:50px;
+
+padding:100px 0;
+
+align-items:start;
+
+}
+
+@media(max-width:992px){
+
+.about-page{
+
+grid-template-columns:1fr;
+
+}
+
+}

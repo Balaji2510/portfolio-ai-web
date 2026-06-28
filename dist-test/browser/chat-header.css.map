@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/assistant/components/chat-header/chat-header.scss"],
+  "sourcesContent": [".header{\r\n\r\npadding:24px;\r\n\r\nbackground:#4F46E5;\r\n\r\ncolor:white;\r\n\r\nborder-radius:18px 18px 0 0;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEA,WAAA;AAEA,cAAA;AAEA,SAAA;AAEA,iBAAA,KAAA,KAAA,EAAA;;",
+  "names": []
+}

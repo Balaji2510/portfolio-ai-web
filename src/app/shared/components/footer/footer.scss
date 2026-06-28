@@ -1,0 +1,269 @@
+footer {
+
+    background: #0F172A;
+
+    color: #E2E8F0;
+
+    padding: 80px 20px 30px;
+
+}
+
+.container {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+}
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 50px;
+
+    margin-bottom: 60px;
+
+}
+
+h2 {
+
+    color: white;
+
+    margin-bottom: 20px;
+
+    font-size: 32px;
+
+}
+
+h3 {
+
+    color: white;
+
+    margin-bottom: 20px;
+
+    font-size: 22px;
+
+}
+
+p {
+
+    line-height: 1.8;
+
+    color: #CBD5E1;
+
+}
+
+ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+li {
+
+    margin-bottom: 14px;
+
+}
+
+a {
+
+    text-decoration: none;
+
+    color: #CBD5E1;
+
+    transition: .3s;
+
+}
+
+a:hover {
+
+    color: #4F46E5;
+
+}
+
+.chips {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.chips span {
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    transition: .3s;
+
+}
+
+.chips span:hover {
+
+    background: #4F46E5;
+
+}
+
+.social {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+.social a {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(255,255,255,.08);
+
+    font-size: 20px;
+
+    transition: .3s;
+
+}
+
+.social a:hover {
+
+    background: #4F46E5;
+
+    transform: translateY(-5px);
+
+}
+
+.bottom {
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+.bottom p {
+
+    margin: 0;
+
+}
+
+.top {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #4F46E5;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: .3s;
+
+}
+
+.top:hover {
+
+    background: #6366F1;
+
+    transform: translateY(-6px);
+
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    .grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px;
+
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    footer {
+
+        padding: 60px 20px 20px;
+
+    }
+
+    .grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .bottom {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    h2 {
+
+        font-size: 28px;
+
+    }
+
+    h3 {
+
+        font-size: 20px;
+
+    }
+
+}

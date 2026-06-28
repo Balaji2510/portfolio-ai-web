@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/projects/components/technology-chip/technology-chip.scss"],
+  "sourcesContent": [".chip{\r\n\r\n    display:inline-flex;\r\n\r\n    align-items:center;\r\n\r\n    justify-content:center;\r\n\r\n    padding:8px 16px;\r\n\r\n    border-radius:999px;\r\n\r\n    background:#EEF2FF;\r\n\r\n    color:#4F46E5;\r\n\r\n    font-size:13px;\r\n\r\n    font-weight:600;\r\n\r\n    transition:.3s;\r\n\r\n    cursor:default;\r\n\r\n}\r\n\r\n.chip:hover{\r\n\r\n    background:#4F46E5;\r\n\r\n    color:#fff;\r\n\r\n    transform:translateY(-2px);\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,WAAA;AAEA,eAAA;AAEA,mBAAA;AAEA,WAAA,IAAA;AAEA,iBAAA;AAEA,cAAA;AAEA,SAAA;AAEA,aAAA;AAEA,eAAA;AAEA,cAAA;AAEA,UAAA;;AAIJ,CA1BA,IA0BA;AAEI,cAAA;AAEA,SAAA;AAEA,aAAA,WAAA;;",
+  "names": []
+}

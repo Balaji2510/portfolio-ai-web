@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/resume/components/resume-header/resume-header.scss"],
+  "sourcesContent": [".header{\r\n\r\n    text-align:center;\r\n\r\n    margin-bottom:50px;\r\n\r\n}\r\n\r\nh1{\r\n\r\n    font-size:48px;\r\n\r\n}\r\n\r\nh3{\r\n\r\n    color:#4F46E5;\r\n\r\n    margin:16px 0;\r\n\r\n}\r\n\r\np{\r\n\r\n    max-width:800px;\r\n\r\n    margin:auto;\r\n\r\n    color:#64748B;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,cAAA;AAEA,iBAAA;;AAIJ;AAEI,aAAA;;AAIJ;AAEI,SAAA;AAEA,UAAA,KAAA;;AAIJ;AAEI,aAAA;AAEA,UAAA;AAEA,SAAA;;",
+  "names": []
+}

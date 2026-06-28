@@ -1,0 +1,41 @@
+<div
+    class="message-container"
+    #scrollContainer>
+
+    @if(messages.length === 0){
+
+        <div class="empty">
+
+            <h2>
+
+                👋 Welcome to PortfolioAI
+
+            </h2>
+
+            <p>
+
+                Ask me anything about Balaji's experience, projects, skills or resume.
+
+            </p>
+
+        </div>
+
+    }
+
+    @for(message of messages; track message.id){
+
+        <app-message
+
+            [message]="message">
+
+        </app-message>
+
+    }
+
+    @if(loading){
+
+        <app-typing-indicator></app-typing-indicator>
+
+    }
+
+</div>

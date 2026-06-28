@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/projects/pages/projects/projects.ts", "src/app/features/projects/pages/projects/projects.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-projects',\r\n  imports: [],\r\n  templateUrl: './projects.html',\r\n  styleUrl: './projects.scss',\r\n})\r\nexport class Projects {\r\n\r\n}\r\n", "<p>projects works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;AAQM,IAAO,WAAP,MAAO,UAAQ;;qCAAR,WAAQ;EAAA;yEAAR,WAAQ,WAAA,CAAA,CAAA,cAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,kBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACRrB,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,iBAAA;AAAe,MAAA,0BAAA;;;;;sEDQL,UAAQ,CAAA;UANpB;uBACW,gBAAc,SACf,CAAA,GAAE,UAAA,6BAAA,CAAA;;;;6EAIA,UAAQ,EAAA,WAAA,YAAA,UAAA,oDAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

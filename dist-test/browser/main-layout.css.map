@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/layouts/main-layout/main-layout.scss"],
+  "sourcesContent": [".layout{\r\n    min-height:100vh;\r\n    display:flex;\r\n    flex-direction:column;\r\n    background:#F8FAFC;\r\n}\r\n\r\n.content{\r\n    flex:1;\r\n    margin-top:72px;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,cAAA;AACA,WAAA;AACA,kBAAA;AACA,cAAA;;AAGJ,CAAA;AACI,QAAA;AACA,cAAA;;",
+  "names": []
+}

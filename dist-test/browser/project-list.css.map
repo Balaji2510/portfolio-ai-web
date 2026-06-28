@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/projects/components/project-list/project-list.scss"],
+  "sourcesContent": [".projects{\r\n\r\n    padding:80px 0;\r\n\r\n}\r\n\r\n.header{\r\n\r\n    text-align:center;\r\n\r\n    margin-bottom:60px;\r\n\r\n}\r\n\r\n.tag{\r\n\r\n    display:inline-block;\r\n\r\n    padding:8px 18px;\r\n\r\n    border-radius:30px;\r\n\r\n    background:#EEF2FF;\r\n\r\n    color:#4F46E5;\r\n\r\n    font-weight:600;\r\n\r\n}\r\n\r\n.header h2{\r\n\r\n    margin:20px 0;\r\n\r\n    font-size:42px;\r\n\r\n}\r\n\r\n.header p{\r\n\r\n    color:#64748B;\r\n\r\n    max-width:650px;\r\n\r\n    margin:auto;\r\n\r\n}\r\n\r\n.grid{\r\n\r\n    display:grid;\r\n\r\n    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));\r\n\r\n    gap:32px;\r\n\r\n}\r\n\r\n@media(max-width:768px){\r\n\r\n    .projects{\r\n\r\n        padding:60px 20px;\r\n\r\n    }\r\n\r\n    .header h2{\r\n\r\n        font-size:32px;\r\n\r\n    }\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,WAAA,KAAA;;AAIJ,CAAA;AAEI,cAAA;AAEA,iBAAA;;AAIJ,CAAA;AAEI,WAAA;AAEA,WAAA,IAAA;AAEA,iBAAA;AAEA,cAAA;AAEA,SAAA;AAEA,eAAA;;AAIJ,CAxBA,OAwBA;AAEI,UAAA,KAAA;AAEA,aAAA;;AAIJ,CAhCA,OAgCA;AAEI,SAAA;AAEA,aAAA;AAEA,UAAA;;AAIJ,CAAA;AAEI,WAAA;AAEA,yBAAA,OAAA,QAAA,EAAA,OAAA,KAAA,EAAA;AAEA,OAAA;;AAIJ,QAAA,WAAA;AAEI,GA5DJ;AA8DQ,aAAA,KAAA;;AAIJ,GA5DJ,OA4DI;AAEI,eAAA;;;",
+  "names": []
+}

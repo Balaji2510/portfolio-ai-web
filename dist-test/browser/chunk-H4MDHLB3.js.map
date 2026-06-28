@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/skills/pages/skills/skills.ts", "src/app/features/skills/pages/skills/skills.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-skills',\r\n  imports: [],\r\n  templateUrl: './skills.html',\r\n  styleUrl: './skills.scss',\r\n})\r\nexport class Skills {\r\n\r\n}\r\n", "<p>skills works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;AAQM,IAAO,SAAP,MAAO,QAAM;;qCAAN,SAAM;EAAA;yEAAN,SAAM,WAAA,CAAA,CAAA,YAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,gBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACRnB,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,eAAA;AAAa,MAAA,0BAAA;;;;;sEDQH,QAAM,CAAA;UANlB;uBACW,cAAY,SACb,CAAA,GAAE,UAAA,2BAAA,CAAA;;;;6EAIA,QAAM,EAAA,WAAA,UAAA,UAAA,8CAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

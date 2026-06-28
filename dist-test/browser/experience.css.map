@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/experience/pages/experience/experience.scss"],
+  "sourcesContent": [":host{\r\n\r\ndisplay:block;\r\n\r\n}"],
+  "mappings": ";AAAA;AAEA,WAAA;;",
+  "names": []
+}

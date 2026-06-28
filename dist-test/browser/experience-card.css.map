@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/experience/components/experience-card/experience-card.scss"],
+  "sourcesContent": [".card{\r\n\r\n    background:white;\r\n\r\n    border-radius:20px;\r\n\r\n    padding:32px;\r\n\r\n    box-shadow:0 10px 30px rgba(0,0,0,.08);\r\n\r\n}\r\n\r\n.header{\r\n\r\n    display:flex;\r\n\r\n    justify-content:space-between;\r\n\r\n    align-items:center;\r\n\r\n}\r\n\r\n.header span{\r\n\r\n    background:#4F46E5;\r\n\r\n    color:white;\r\n\r\n    padding:6px 14px;\r\n\r\n    border-radius:20px;\r\n\r\n}\r\n\r\nh3{\r\n\r\n    margin:16px 0;\r\n\r\n}\r\n\r\np{\r\n\r\n    color:#64748B;\r\n\r\n}\r\n\r\n.chips{\r\n\r\n    display:flex;\r\n\r\n    gap:10px;\r\n\r\n    flex-wrap:wrap;\r\n\r\n    margin:24px 0;\r\n\r\n}\r\n\r\n.chips span{\r\n\r\n    padding:8px 14px;\r\n\r\n    background:#EEF2FF;\r\n\r\n    color:#4F46E5;\r\n\r\n    border-radius:30px;\r\n\r\n}\r\n\r\nli{\r\n\r\n    margin-bottom:12px;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,cAAA;AAEA,iBAAA;AAEA,WAAA;AAEA,cAAA,EAAA,KAAA,KAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;;AAIJ,CAAA;AAEI,WAAA;AAEA,mBAAA;AAEA,eAAA;;AAIJ,CAVA,OAUA;AAEI,cAAA;AAEA,SAAA;AAEA,WAAA,IAAA;AAEA,iBAAA;;AAIJ;AAEI,UAAA,KAAA;;AAIJ;AAEI,SAAA;;AAIJ,CAAA;AAEI,WAAA;AAEA,OAAA;AAEA,aAAA;AAEA,UAAA,KAAA;;AAIJ,CAZA,MAYA;AAEI,WAAA,IAAA;AAEA,cAAA;AAEA,SAAA;AAEA,iBAAA;;AAIJ;AAEI,iBAAA;;",
+  "names": []
+}

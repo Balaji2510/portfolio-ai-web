@@ -1,0 +1,95 @@
+.message{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-bottom:24px;
+
+}
+
+.user{
+
+    flex-direction:row-reverse;
+
+}
+
+.avatar{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#EEF2FF;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.bubble{
+
+    max-width:75%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#F8FAFC;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.user .bubble{
+
+    background:#4F46E5;
+
+    color:white;
+
+}
+
+.content{
+
+    white-space:pre-wrap;
+
+    line-height:1.7;
+
+}
+
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:14px;
+
+    font-size:12px;
+
+}
+
+.footer button{
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    color:inherit;
+
+    font-weight:600;
+
+}

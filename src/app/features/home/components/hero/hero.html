@@ -1,0 +1,115 @@
+<section class="hero">
+
+    <div class="container">
+
+        <div class="left">
+
+            <span class="badge">
+                👋 Welcome to my portfolio
+            </span>
+
+            <h1>
+
+                Hi,
+
+                I'm
+
+                <span>Balaji</span>
+
+            </h1>
+
+            <h2>
+
+                MEAN Stack Developer
+
+                &
+
+                AI Engineer
+
+            </h2>
+
+            <p>
+
+                Passionate Full Stack Developer with 3.5+ years of experience
+                building scalable web applications using Angular, Node.js,
+                MongoDB, AWS, GraphQL and Artificial Intelligence.
+
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    routerLink="/projects"
+                    class="primary">
+
+                    View Projects
+
+                </a>
+
+                <a
+                    routerLink="/assistant"
+                    class="secondary">
+
+                    AI Assistant
+
+                </a>
+
+            </div>
+
+            <div class="social">
+
+                <a
+                    href="https://github.com/YOUR_USERNAME"
+                    target="_blank">
+
+                    GitHub
+
+                </a>
+
+                <a
+                    href="https://linkedin.com/in/YOUR_PROFILE"
+                    target="_blank">
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="profile-card">
+
+                <img
+                    src="/assets/images/profile.jpg"
+                    alt="Balaji">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="container">
+
+        @for(stat of stats; track stat.label){
+
+        <div class="card">
+
+            <h2>{{stat.value}}</h2>
+
+            <p>{{stat.label}}</p>
+
+        </div>
+
+        }
+
+    </div>
+
+</section>

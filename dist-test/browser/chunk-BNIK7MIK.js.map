@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/pages/dashboard/dashboard.ts", "src/app/features/admin/pages/dashboard/dashboard.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  imports: [],\r\n  templateUrl: './dashboard.html',\r\n  styleUrl: './dashboard.scss',\r\n})\r\nexport class Dashboard {\r\n\r\n}\r\n", "<p>dashboard works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;AAQM,IAAO,YAAP,MAAO,WAAS;;qCAAT,YAAS;EAAA;yEAAT,YAAS,WAAA,CAAA,CAAA,eAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,mBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACRtB,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,kBAAA;AAAgB,MAAA,0BAAA;;;;;sEDQN,WAAS,CAAA;UANrB;uBACW,iBAAe,SAChB,CAAA,GAAE,UAAA,8BAAA,CAAA;;;;6EAIA,WAAS,EAAA,WAAA,aAAA,UAAA,mDAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

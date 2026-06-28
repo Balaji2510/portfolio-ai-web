@@ -1,0 +1,51 @@
+<aside class="sidebar">
+
+    <button
+        class="new-chat"
+        (click)="newChat.emit()">
+
+        ＋ New Chat
+
+    </button>
+
+    <div class="history">
+
+        @for(chat of chats; track chat.id){
+
+            <div
+                class="chat"
+                [class.active]="selectedChatId === chat.id">
+
+                <div
+                    class="info"
+                    (click)="openChat.emit(chat.id)">
+
+                    <h4>
+
+                        {{chat.title}}
+
+                    </h4>
+
+                    <p>
+
+                        {{chat.lastMessage}}
+
+                    </p>
+
+                </div>
+
+                <button
+                    class="delete"
+                    (click)="deleteChat.emit(chat.id)">
+
+                    🗑
+
+                </button>
+
+            </div>
+
+        }
+
+    </div>
+
+</aside>

@@ -1,0 +1,14 @@
+<div class="chips">
+
+    @for(question of suggestions; track question){
+
+        <button
+            (click)="choose(question)">
+
+            {{ question }}
+
+        </button>
+
+    }
+
+</div>

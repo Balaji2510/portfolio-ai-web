@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/assistant/pages/assistant/assistant.scss"],
+  "sourcesContent": [".assistant{\r\n\r\n    display:flex;\r\n\r\n    height:calc(100vh - 72px);\r\n\r\n    background:#F8FAFC;\r\n\r\n}\r\n\r\n.chat-area{\r\n\r\n    flex:1;\r\n\r\n    display:flex;\r\n\r\n    flex-direction:column;\r\n\r\n}\r\n\r\n@media(max-width:992px){\r\n\r\n.assistant{\r\n\r\nflex-direction:column;\r\n\r\n}\r\n\r\n.sidebar{\r\n\r\nwidth:100%;\r\n\r\nheight:auto;\r\n\r\n}\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,WAAA;AAEA,UAAA,KAAA,MAAA,EAAA;AAEA,cAAA;;AAIJ,CAAA;AAEI,QAAA;AAEA,WAAA;AAEA,kBAAA;;AAIJ,QAAA,WAAA;AAEA,GAtBA;AAwBA,oBAAA;;AAIA,GAAA;AAEA,WAAA;AAEA,YAAA;;;",
+  "names": []
+}

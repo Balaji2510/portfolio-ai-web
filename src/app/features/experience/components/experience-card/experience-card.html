@@ -1,0 +1,69 @@
+<div class="card">
+
+    <div class="header">
+
+        <h2>
+
+            {{experience.designation}}
+
+        </h2>
+
+        @if(experience.current){
+
+            <span>
+
+                Current
+
+            </span>
+
+        }
+
+    </div>
+
+    <h3>
+
+        {{experience.company}}
+
+    </h3>
+
+    <p>
+
+        {{experience.duration}}
+
+    </p>
+
+    <p>
+
+        {{experience.location}}
+
+    </p>
+
+    <div class="chips">
+
+        @for(skill of experience.technologies;track skill){
+
+            <span>
+
+                {{skill}}
+
+            </span>
+
+        }
+
+    </div>
+
+    <ul>
+
+        @for(item of experience.responsibilities;track item){
+
+            <li>
+
+                {{item}}
+
+            </li>
+
+        }
+
+    </ul>
+
+</div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/about/components/biography/biography.scss"],
+  "sourcesContent": [".biography{\r\n\r\n    line-height:1.8;\r\n\r\n}\r\n\r\np{\r\n\r\n    color:#64748B;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,eAAA;;AAIJ;AAEI,SAAA;;",
+  "names": []
+}

@@ -1,0 +1,35 @@
+<section class="resume">
+
+<app-resume-header
+
+[name]="resume.name"
+
+[designation]="resume.designation"
+
+[summary]="resume.summary">
+
+</app-resume-header>
+
+<div class="download">
+
+<app-download-button
+
+[url]="resume.resumeUrl">
+
+</app-download-button>
+
+</div>
+
+<app-skills-summary
+
+[skills]="skills">
+
+</app-skills-summary>
+
+<app-experience-summary
+
+[experience]="experience">
+
+</app-experience-summary>
+
+</section>

@@ -1,0 +1,37 @@
+<div class="chat-input-container">
+
+    <textarea
+
+        [(ngModel)]="message"
+
+        (keydown)="onKeyDown($event)"
+
+        [maxLength]="maxLength"
+
+        rows="1"
+
+        placeholder="Ask me anything about Balaji...">
+
+    </textarea>
+
+    <div class="bottom">
+
+        <small>
+
+            {{ message().length }}/{{ maxLength }}
+
+        </small>
+
+        <button
+
+            (click)="send()"
+
+            [disabled]="!message().trim()">
+
+            Send
+
+        </button>
+
+    </div>
+
+</div>

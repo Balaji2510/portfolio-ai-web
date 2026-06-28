@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/assistant/components/message-list/message-list.scss"],
+  "sourcesContent": [".message-container{\r\n\r\n    height:65vh;\r\n\r\n    overflow-y:auto;\r\n\r\n    padding:24px;\r\n\r\n    background:#F8FAFC;\r\n\r\n    scroll-behavior:smooth;\r\n\r\n}\r\n\r\n.empty{\r\n\r\n    height:100%;\r\n\r\n    display:flex;\r\n\r\n    flex-direction:column;\r\n\r\n    justify-content:center;\r\n\r\n    align-items:center;\r\n\r\n    text-align:center;\r\n\r\n    color:#64748B;\r\n\r\n}\r\n\r\n.empty h2{\r\n\r\n    font-size:34px;\r\n\r\n    margin-bottom:20px;\r\n\r\n    color:#0F172A;\r\n\r\n}\r\n\r\n.empty p{\r\n\r\n    max-width:550px;\r\n\r\n    line-height:1.8;\r\n\r\n}\r\n\r\n.message-container::-webkit-scrollbar{\r\n\r\n    width:8px;\r\n\r\n}\r\n\r\n.message-container::-webkit-scrollbar-thumb{\r\n\r\n    background:#CBD5E1;\r\n\r\n    border-radius:10px;\r\n\r\n}\r\n\r\n.message-container::-webkit-scrollbar-track{\r\n\r\n    background:transparent;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEI,UAAA;AAEA,cAAA;AAEA,WAAA;AAEA,cAAA;AAEA,mBAAA;;AAIJ,CAAA;AAEI,UAAA;AAEA,WAAA;AAEA,kBAAA;AAEA,mBAAA;AAEA,eAAA;AAEA,cAAA;AAEA,SAAA;;AAIJ,CAlBA,MAkBA;AAEI,aAAA;AAEA,iBAAA;AAEA,SAAA;;AAIJ,CA5BA,MA4BA;AAEI,aAAA;AAEA,eAAA;;AAIJ,CAlDA,iBAkDA;AAEI,SAAA;;AAIJ,CAxDA,iBAwDA;AAEI,cAAA;AAEA,iBAAA;;AAIJ,CAhEA,iBAgEA;AAEI,cAAA;;",
+  "names": []
+}

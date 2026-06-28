@@ -1,0 +1,39 @@
+<section class="assistant">
+
+    <app-chat-history
+
+        [chats]="chats"
+
+        [selectedChatId]="selectedChatId"
+
+        (newChat)="createChat()"
+
+        (openChat)="openChat($event)"
+
+        (deleteChat)="removeChat($event)">
+
+    </app-chat-history>
+
+    <div class="chat-area">
+
+        <app-chat-header></app-chat-header>
+
+        <app-suggestion-chips></app-suggestion-chips>
+
+        <app-message-list
+
+            [messages]="messages"
+
+            [loading]="loading">
+
+        </app-message-list>
+
+        <app-chat-input
+
+            (sendMessage)="send($event)">
+
+        </app-chat-input>
+
+    </div>
+
+</section>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/admin/pages/login/login.ts", "src/app/features/admin/pages/login/login.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  imports: [],\r\n  templateUrl: './login.html',\r\n  styleUrl: './login.scss',\r\n})\r\nexport class Login {\r\n\r\n}\r\n", "<p>login works!</p>\r\n"],
+  "mappings": ";;;;;;;;;;;AAQM,IAAO,QAAP,MAAO,OAAK;;qCAAL,QAAK;EAAA;yEAAL,QAAK,WAAA,CAAA,CAAA,WAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,eAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACRlB,MAAA,4BAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,cAAA;AAAY,MAAA,0BAAA;;;;;sEDQF,OAAK,CAAA;UANjB;uBACW,aAAW,SACZ,CAAA,GAAE,UAAA,0BAAA,CAAA;;;;6EAIA,OAAK,EAAA,WAAA,SAAA,UAAA,2CAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}
