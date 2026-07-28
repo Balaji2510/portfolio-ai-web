@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Experience } from '../../../../core/models';
 import { ExperienceCard } from "../experience-card/experience-card";
+
+import { ExperienceService } from '../../../../core/services/experience';
 
 @Component({
   selector: 'app-timeline',
@@ -8,45 +10,16 @@ import { ExperienceCard } from "../experience-card/experience-card";
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
 })
-export class Timeline {
- experiences: Experience[] = [
+export class Timeline implements OnInit {
+  private experienceService = inject(ExperienceService);
+  experiences: Experience[] = [];
 
-    {
-
-      id:1,
-
-      company:'ABC Technologies',
-
-      designation:'Software Engineer',
-
-      duration:'2022 - Present',
-
-      location:'Chennai',
-
-      employmentType:'Full Time',
-
-      current:true,
-
-      technologies:[
-        'Angular',
-        'Node.js',
-        'AWS',
-        'MongoDB'
-      ],
-
-      responsibilities:[
-
-        'Develop enterprise web applications',
-
-        'Designed REST APIs',
-
-        'Integrated AWS services',
-
-        'Led frontend development'
-
-      ]
-
-    }
-
-  ];
+  ngOnInit() {
+    this.experienceService.getExperiences().subscribe({
+      next: (res) => {
+        this.experiences = res.data.docs || res.data;
+      },
+      error: (err) => console.error(err)
+    });
+  }
 }

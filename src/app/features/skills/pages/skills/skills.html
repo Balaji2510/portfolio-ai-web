@@ -1,1 +1,25 @@
-<p>skills works!</p>
+<section class="skills-section">
+    <div class="container">
+        <div class="title">
+            <h1>My Skills</h1>
+            <p>Technologies I work with</p>
+        </div>
+        <div class="skills-grid">
+            @for(skill of skills; track skill.id) {
+                <div class="skill-card">
+                    <div class="icon-wrapper" [style.color]="skill.color || '#4F46E5'">
+                        @if (skill.icon && (skill.icon.includes('.') || skill.icon.includes('/'))) {
+                            <img [src]="skill.icon" [alt]="skill.name" class="skill-image">
+                        } @else {
+                            <i class="fas" [class]="skill.icon || 'fa-code'"></i>
+                        }
+                    </div>
+                    <h3>{{skill.name}}</h3>
+                    <div class="level-bar">
+                        <div class="fill" [style.width.%]="skill.level" [style.background]="skill.color || '#4F46E5'"></div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

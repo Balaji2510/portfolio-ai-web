@@ -1,18 +1,17 @@
 import { Component, Input } from '@angular/core';
-
-interface MessageContent {
-  content: string;
-}
+import { DatePipe, NgClass } from '@angular/common';
+import { Message } from '../../../../core/models';
 
 @Component({
   selector: 'app-message',
-  imports: [],
+  standalone: true,
+  imports: [DatePipe, NgClass],
   templateUrl: './message.html',
   styleUrl: './message.scss',
 })
 export class Messages {
   @Input({ required: true })
-  message!: MessageContent;
+  message!: Message;
 
   copied = false;
 

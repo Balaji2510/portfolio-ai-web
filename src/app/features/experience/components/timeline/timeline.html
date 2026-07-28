@@ -1,30 +1,31 @@
-<p>timeline works!</p>
-<section class="timeline">
+<section class="timeline-section">
 
     <div class="title">
 
-        <h1>
+        <h2>Experience</h2>
 
-            Experience
-
-        </h1>
-
-        <p>
-
-            My professional journey
-
-        </p>
+        <p>My professional journey</p>
 
     </div>
 
-    @for(item of experiences;track item.id){
+    <div class="timeline-container">
 
-        <app-experience-card
+        @for(item of experiences; track item.id) {
 
-            [experience]="item">
+            <div class="timeline-item">
 
-        </app-experience-card>
+                <div class="timeline-dot"></div>
 
-    }
+                <div class="timeline-content">
+
+                    <app-experience-card [experience]="item"></app-experience-card>
+
+                </div>
+
+            </div>
+
+        }
+
+    </div>
 
 </section>

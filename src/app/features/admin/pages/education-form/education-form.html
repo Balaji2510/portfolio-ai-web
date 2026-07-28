@@ -1,0 +1,113 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit Education' : 'Add New Education' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="eduForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Institution</mat-label>
+    <i matPrefix class="fas fa-building p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="institution">
+
+    @if(eduForm.get('institution')?.invalid && eduForm.get('institution')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Degree</mat-label>
+    <i matPrefix class="fas fa-graduation-cap p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="degree">
+
+    @if(eduForm.get('degree')?.invalid && eduForm.get('degree')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Specialization</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="specialization" placeholder="e.g. Software Engineering">
+
+    @if(eduForm.get('specialization')?.invalid && eduForm.get('specialization')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>CGPA</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="cgpa">
+
+    @if(eduForm.get('cgpa')?.invalid && eduForm.get('cgpa')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Start Year</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="number" formControlName="startYear" placeholder="2018">
+
+    @if(eduForm.get('startYear')?.invalid && eduForm.get('startYear')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>End Year</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="number" formControlName="endYear" placeholder="2022">
+
+    @if(eduForm.get('endYear')?.invalid && eduForm.get('endYear')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" formControlName="current">
+                        I currently study here
+                    </label>
+                </div>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Status</mat-label>
+    <i matPrefix class="fas fa-toggle-on p-r-2" style="margin-right: 8px;"></i>
+    <mat-select formControlName="status">
+                        <mat-option value="ACTIVE">Active</mat-option>
+                        <mat-option value="INACTIVE">Inactive</mat-option>
+                    </mat-select>
+
+    @if(eduForm.get('status')?.invalid && eduForm.get('status')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Education
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

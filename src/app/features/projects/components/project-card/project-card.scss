@@ -1,6 +1,6 @@
 .project-card{
 
-    background:#ffffff;
+    background: var(--bg-main);
 
     border-radius:20px;
 
@@ -80,13 +80,13 @@
 
     font-size:24px;
 
-    color:#0F172A;
+    color: var(--text-primary);
 
 }
 
 .content p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
     line-height:1.7;
 

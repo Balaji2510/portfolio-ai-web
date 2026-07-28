@@ -1,26 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TechnologyChip } from "../technology-chip/technology-chip";
-
-export interface Project {
-
-  id: number;
-
-  title: string;
-
-  description: string;
-
-  image: string;
-
-  technologies: string[];
-
-  github: string;
-
-  liveDemo: string;
-
-  featured: boolean;
-
-}
-
+import { Project } from '../../../../core/models';
 @Component({
   selector: 'app-project-card',
   imports: [TechnologyChip],

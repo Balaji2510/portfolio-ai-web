@@ -2,7 +2,7 @@
 
     padding:100px 20px;
 
-    background:white;
+    background: var(--bg-main);
 
 }
 
@@ -40,13 +40,13 @@ h2{
 
     margin:20px 0;
 
-    color:#0F172A;
+    color: var(--text-primary);
 
 }
 
 p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
     line-height:1.9;
 
@@ -76,7 +76,7 @@ p{
 
 .card{
 
-    background:#F8FAFC;
+    background: var(--bg-secondary);
 
     border-radius:20px;
 

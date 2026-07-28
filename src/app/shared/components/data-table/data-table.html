@@ -1,0 +1,64 @@
+<div class="data-table-container">
+    <div class="table-header">
+        <h2>{{ title }}</h2>
+        <button class="add-btn" (click)="addNew()">
+            <i class="fas fa-plus"></i> Add New
+        </button>
+    </div>
+
+    <div class="table-wrapper">
+        @if (loading) {
+            <div class="loading-state">
+                <i class="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+        } @else if (data.length === 0) {
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i> No records found.
+            </div>
+        } @else {
+            <table class="glass-table">
+                <thead>
+                    <tr>
+                        @for (col of columns; track col.key) {
+                            <th>{{ col.label }}</th>
+                        }
+                        <th class="actions-col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of data; track item.id) {
+                        <tr>
+                            @for (col of columns; track col.key) {
+                                <td>
+                                    @if (col.type === 'image' && item[col.key]) {
+                                        <img [src]="item[col.key]" class="table-img" alt="image">
+                                    } @else if (col.type === 'date') {
+                                        {{ item[col.key] | date:'mediumDate' }}
+                                    } @else if (col.type === 'badge') {
+                                        <span class="badge">{{ item[col.key] }}</span>
+                                    } @else if (col.type === 'icon') {
+                                        @if(item[col.key] && item[col.key].startsWith('fa')) {
+                                            <i [class]="item[col.key]"></i>
+                                        } @else {
+                                            {{ item[col.key] }}
+                                        }
+                                    } @else {
+                                        {{ item[col.key] }}
+                                    }
+                                </td>
+                            }
+                            <td class="actions-cell">
+                                <button class="action-btn edit" (click)="editItem(item)" title="Edit">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button class="action-btn delete" (click)="deleteItem(item)" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

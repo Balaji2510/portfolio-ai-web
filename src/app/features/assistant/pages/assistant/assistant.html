@@ -1,4 +1,4 @@
-<section class="assistant">
+<section class="assistant" [class.sidebar-open]="isSidebarOpen">
 
     <app-chat-history
 
@@ -16,9 +16,11 @@
 
     <div class="chat-area">
 
-        <app-chat-header></app-chat-header>
+        <app-chat-header (toggleSidebar)="isSidebarOpen = !isSidebarOpen"></app-chat-header>
 
-        <app-suggestion-chips></app-suggestion-chips>
+        @if (messages.length === 0) {
+            <app-suggestion-chips (selected)="send($event)"></app-suggestion-chips>
+        }
 
         <app-message-list
 

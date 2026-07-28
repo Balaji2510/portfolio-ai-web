@@ -14,25 +14,19 @@
 
                 I'm
 
-                <span>Balaji</span>
+                <span>{{ settings()?.siteName  }}</span>
 
             </h1>
 
             <h2>
 
-                MEAN Stack Developer
-
-                &
-
-                AI Engineer
+                {{ settings()?.tagline }}
 
             </h2>
 
             <p>
 
-                Passionate Full Stack Developer with 3.5+ years of experience
-                building scalable web applications using Angular, Node.js,
-                MongoDB, AWS, GraphQL and Artificial Intelligence.
+                {{ settings()?.description  }}
 
             </p>
 
@@ -59,7 +53,7 @@
             <div class="social">
 
                 <a
-                    href="https://github.com/YOUR_USERNAME"
+                    [href]="settings()?.github || 'https://github.com'"
                     target="_blank">
 
                     GitHub
@@ -67,7 +61,7 @@
                 </a>
 
                 <a
-                    href="https://linkedin.com/in/YOUR_PROFILE"
+                    [href]="settings()?.linkedin || 'https://linkedin.com'"
                     target="_blank">
 
                     LinkedIn

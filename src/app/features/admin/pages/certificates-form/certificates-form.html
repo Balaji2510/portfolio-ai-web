@@ -1,0 +1,111 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit Certificate' : 'Add New Certificate' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="certForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Certificate Title</mat-label>
+    <i matPrefix class="fas fa-heading p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="title">
+
+    @if(certForm.get('title')?.invalid && certForm.get('title')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Provider</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="provider" placeholder="e.g. Google, AWS">
+
+    @if(certForm.get('provider')?.invalid && certForm.get('provider')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Credential ID</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="credentialId">
+
+    @if(certForm.get('credentialId')?.invalid && certForm.get('credentialId')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Credential URL</mat-label>
+    <i matPrefix class="fas fa-link p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="credentialUrl">
+
+    @if(certForm.get('credentialUrl')?.invalid && certForm.get('credentialUrl')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Issue Date</mat-label>
+    <i matPrefix class="fas fa-calendar p-r-2" style="margin-right: 8px;"></i>
+    <input matInput [matDatepicker]="picker_issueDate" formControlName="issueDate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker_issueDate"></mat-datepicker-toggle>
+    <mat-datepicker #picker_issueDate></mat-datepicker>
+
+    @if(certForm.get('issueDate')?.invalid && certForm.get('issueDate')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Image URL</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="image">
+
+    @if(certForm.get('image')?.invalid && certForm.get('image')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Skills (comma separated)</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="skills" placeholder="AWS, Python, React">
+
+    @if(certForm.get('skills')?.invalid && certForm.get('skills')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="featured">
+                    Featured Certificate
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Certificate
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

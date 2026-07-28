@@ -1,1 +1,64 @@
-<p>contact works!</p>
+<div class="form-container" style="max-width: 600px; margin: 40px auto; padding: 40px 20px;">
+    <div class="form-header" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 32px; margin-bottom: 12px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Get in Touch</h2>
+        <p style="color: var(--text-secondary);">I'd love to hear from you. Send me a message!</p>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="glass-form" style="padding: 40px;">
+        
+        @if (successMessage()) {
+            <div class="success-alert" style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 16px; border-radius: 8px; margin-bottom: 24px; border: 1px solid rgba(16, 185, 129, 0.2); text-align: center;">
+                {{ successMessage() }}
+            </div>
+        }
+        @if (errorMessage()) {
+            <div class="error-alert">{{ errorMessage() }}</div>
+        }
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Name</mat-label>
+            <i matPrefix class="fas fa-user"></i>
+            <input matInput type="text" formControlName="name" placeholder="John Doe">
+            @if(contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+                <mat-error>Name is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <i matPrefix class="fas fa-envelope"></i>
+            <input matInput type="email" formControlName="email" placeholder="john@example.com">
+            @if(contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                <mat-error>Valid email is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Subject</mat-label>
+            <i matPrefix class="fas fa-heading"></i>
+            <input matInput type="text" formControlName="subject" placeholder="Project Inquiry">
+            @if(contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched) {
+                <mat-error>Subject is required</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Message</mat-label>
+            <i matPrefix class="fas fa-comment"></i>
+            <textarea matInput formControlName="message" rows="6" placeholder="How can I help you?"></textarea>
+            @if(contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+                <mat-error>Message is required</mat-error>
+            }
+        </mat-form-field>
+
+        <div class="form-actions" style="margin-top: 32px;">
+            <button type="submit" class="submit-btn" [disabled]="submitting() || contactForm.invalid" style="width: 100%; padding: 14px; font-size: 16px;">
+                @if(submitting()) {
+                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                } @else {
+                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message
+                }
+            </button>
+        </div>
+    </form>
+</div>

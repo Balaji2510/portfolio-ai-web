@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
+import { CrudService } from '../../../../core/services/crud.service';
 
 @Component({
   selector: 'app-hero',
@@ -6,15 +7,18 @@ import { Component } from '@angular/core';
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
-export class Hero {
+export class Hero implements OnInit {
+  private crudService = inject(CrudService);
+
+  settings = signal<any>(null);
 
    readonly stats = [
     {
-      value: '3.5+',
+      value: '3+',
       label: 'Years Experience'
     },
     {
-      value: '20+',
+      value: '3+',
       label: 'Projects'
     },
     {
@@ -27,4 +31,14 @@ export class Hero {
     }
   ];
 
+  ngOnInit() {
+    this.crudService.getAll('settings').subscribe({
+      next: (res) => {
+        if(res.success && res.data) {
+          this.settings.set(res.data);
+          // dynamically update stats if needed
+        }
+      }
+    });
+  }
 }

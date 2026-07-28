@@ -1,0 +1,116 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit Experience' : 'Add New Experience' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="expForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Company</mat-label>
+    <i matPrefix class="fas fa-building p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="company" placeholder="e.g. Google">
+
+    @if(expForm.get('company')?.invalid && expForm.get('company')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Designation</mat-label>
+    <i matPrefix class="fas fa-briefcase p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="designation" placeholder="e.g. Frontend Engineer">
+
+    @if(expForm.get('designation')?.invalid && expForm.get('designation')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Responsibilities (one per line)</mat-label>
+    <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+    <textarea matInput formControlName="responsibilities" rows="4" placeholder="- Developed awesome features..."></textarea>
+
+    @if(expForm.get('responsibilities')?.invalid && expForm.get('responsibilities')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Start Date</mat-label>
+    <i matPrefix class="fas fa-calendar p-r-2" style="margin-right: 8px;"></i>
+                    <input matInput [matDatepicker]="picker_startDate" formControlName="startDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker_startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #picker_startDate></mat-datepicker>
+                
+    @if(expForm.get('startDate')?.invalid && expForm.get('startDate')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>End Date</mat-label>
+    <i matPrefix class="fas fa-calendar p-r-2" style="margin-right: 8px;"></i>
+                    <input matInput [matDatepicker]="picker_endDate" formControlName="endDate">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker_endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #picker_endDate></mat-datepicker>
+                
+    @if(expForm.get('endDate')?.invalid && expForm.get('endDate')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Location</mat-label>
+    <i matPrefix class="fas fa-map-marker-alt p-r-2" style="margin-right: 8px;"></i>
+                    <input matInput type="text" formControlName="location" placeholder="e.g. San Francisco, CA">
+                
+    @if(expForm.get('location')?.invalid && expForm.get('location')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Status</mat-label>
+    <i matPrefix class="fas fa-toggle-on p-r-2" style="margin-right: 8px;"></i>
+                    <mat-select formControlName="status">
+                        <mat-option value="ACTIVE">Active</mat-option>
+                        <mat-option value="INACTIVE">Inactive</mat-option>
+                    </mat-select>
+                
+    @if(expForm.get('status')?.invalid && expForm.get('status')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="current">
+                    I currently work here
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Experience
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

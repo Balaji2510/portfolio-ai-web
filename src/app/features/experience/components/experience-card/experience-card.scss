@@ -1,6 +1,6 @@
 .card{
 
-    background:white;
+    background: var(--bg-main);
 
     border-radius:20px;
 
@@ -40,7 +40,7 @@ h3{
 
 p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
 }
 

@@ -1,0 +1,72 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit User' : 'Add New User' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Name</mat-label>
+    <i matPrefix class="fas fa-user p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="name">
+
+    @if(userForm.get('name')?.invalid && userForm.get('name')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Email</mat-label>
+    <i matPrefix class="fas fa-envelope p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="email" formControlName="email">
+
+    @if(userForm.get('email')?.invalid && userForm.get('email')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Role</mat-label>
+    <i matPrefix class="fas fa-briefcase p-r-2" style="margin-right: 8px;"></i>
+    <mat-select formControlName="role">
+                        <mat-option value="USER">User</mat-option>
+                        <mat-option value="ADMIN">Admin</mat-option>
+                    </mat-select>
+
+    @if(userForm.get('role')?.invalid && userForm.get('role')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="isActive">
+                    Account is Active
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save User
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

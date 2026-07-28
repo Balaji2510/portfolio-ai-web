@@ -2,8 +2,7 @@
 
 padding:100px 0 60px;
 
-background:linear-gradient(135deg,#EEF2FF,#F8FAFC);
-
+background: linear-gradient(135deg, var(--bg-secondary), var(--bg-main));
 }
 
 .container{
@@ -30,10 +29,8 @@ display:inline-block;
 
 padding:8px 18px;
 
-background:#E0E7FF;
-
-color:#4F46E5;
-
+background: var(--bg-secondary);
+color: var(--accent-color);
 border-radius:30px;
 
 font-weight:600;
@@ -63,16 +60,14 @@ font-size:30px;
 font-weight:600;
 
 margin-bottom:20px;
-
-color:#334155;
-
+color: var(--text-primary);
 }
 
 p{
 
 line-height:1.8;
 
-color:#64748B;
+color: var(--text-muted);
 
 font-size:18px;
 
@@ -136,7 +131,7 @@ text-decoration:none;
 
 font-weight:600;
 
-color:#0F172A;
+color: var(--text-primary);
 
 }
 
@@ -182,7 +177,7 @@ gap:24px;
 
 .card{
 
-background:white;
+background: var(--bg-main);
 
 padding:30px;
 

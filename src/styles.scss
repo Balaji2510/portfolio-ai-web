@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global Premium Theme Variables */
+:root {
+  /* Light Theme */
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --border-light: rgba(226, 232, 240, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  
+  --accent-color: #4F46E5;
+  --accent-hover: #4338CA;
+  --accent-gradient: linear-gradient(135deg, #4F46E5, #6366F1);
+  --accent-shadow: rgba(79, 70, 229, 0.25);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.03);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+body[data-theme="dark"] {
+  /* Dark Theme */
+  --bg-main: #0B0F19;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1F2937;
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --border-light: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  
+  --accent-color: #6366F1;
+  --accent-hover: #818CF8;
+  --accent-gradient: linear-gradient(135deg, #4F46E5, #818CF8);
+  --accent-shadow: rgba(99, 102, 241, 0.3);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}

@@ -1,1 +1,18 @@
-<p>message works!</p>
+<div class="message" [ngClass]="{'user': message.role === 'user', 'assistant': message.role === 'assistant'}">
+    <div class="avatar">
+        @if(message.role === 'user'){
+            <i class="fas fa-user"></i>
+        } @else {
+            <span>✨</span>
+        }
+    </div>
+    <div class="bubble">
+        <div class="content">{{ message.content }}</div>
+        <div class="footer">
+            <span>{{ message.timestamp | date:'shortTime' }}</span>
+            <button (click)="copy()">
+                {{ copied ? 'Copied!' : 'Copy' }}
+            </button>
+        </div>
+    </div>
+</div>

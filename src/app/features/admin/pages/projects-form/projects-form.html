@@ -1,0 +1,123 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit Project' : 'Add New Project' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Title</mat-label>
+    <i matPrefix class="fas fa-heading p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="title" placeholder="Project Title">
+
+    @if(projectForm.get('title')?.invalid && projectForm.get('title')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Short Description</mat-label>
+    <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="shortDescription" placeholder="A brief summary">
+
+    @if(projectForm.get('shortDescription')?.invalid && projectForm.get('shortDescription')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Description</mat-label>
+    <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+    <textarea matInput formControlName="description" rows="4" placeholder="Detailed project description"></textarea>
+
+    @if(projectForm.get('description')?.invalid && projectForm.get('description')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Technologies (comma separated)</mat-label>
+    <i matPrefix class="fas fa-tags p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="technologies" placeholder="Angular, Node.js, MongoDB">
+
+    @if(projectForm.get('technologies')?.invalid && projectForm.get('technologies')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Thumbnail URL</mat-label>
+    <i matPrefix class="fas fa-image p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="thumbnail" placeholder="https://...">
+
+    @if(projectForm.get('thumbnail')?.invalid && projectForm.get('thumbnail')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Status</mat-label>
+    <i matPrefix class="fas fa-toggle-on p-r-2" style="margin-right: 8px;"></i>
+    <mat-select formControlName="status">
+                        <mat-option value="ACTIVE">Active</mat-option>
+                        <mat-option value="IN_PROGRESS">In Progress</mat-option>
+                        <mat-option value="ARCHIVED">Archived</mat-option>
+                    </mat-select>
+
+    @if(projectForm.get('status')?.invalid && projectForm.get('status')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>GitHub URL</mat-label>
+    <i matPrefix class="fas fa-link p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="githubUrl" placeholder="https://github.com/...">
+
+    @if(projectForm.get('githubUrl')?.invalid && projectForm.get('githubUrl')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Live URL</mat-label>
+    <i matPrefix class="fas fa-link p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="liveUrl" placeholder="https://...">
+
+    @if(projectForm.get('liveUrl')?.invalid && projectForm.get('liveUrl')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="featured">
+                    Featured Project
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Project
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

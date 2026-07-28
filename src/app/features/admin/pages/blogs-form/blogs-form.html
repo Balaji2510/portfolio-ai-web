@@ -1,0 +1,108 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEdit ? 'Edit Blog' : 'Add New Blog' }}</h2>
+        <button class="cancel-btn" (click)="onCancel()"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading data...
+        </div>
+    } @else {
+        <form [formGroup]="blogForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Title</mat-label>
+    <i matPrefix class="fas fa-heading p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="title">
+
+    @if(blogForm.get('title')?.invalid && blogForm.get('title')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Slug</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="slug" placeholder="e.g. my-first-blog">
+
+    @if(blogForm.get('slug')?.invalid && blogForm.get('slug')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Category</mat-label>
+    <i matPrefix class="fas fa-graduation-cap p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="category">
+
+    @if(blogForm.get('category')?.invalid && blogForm.get('category')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Cover Image URL</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="coverImage">
+
+    @if(blogForm.get('coverImage')?.invalid && blogForm.get('coverImage')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Tags (comma separated)</mat-label>
+    <i matPrefix class="fas fa-tags p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="tags" placeholder="Angular, Node, JS">
+
+    @if(blogForm.get('tags')?.invalid && blogForm.get('tags')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Summary</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <textarea matInput formControlName="summary" rows="2"></textarea>
+
+    @if(blogForm.get('summary')?.invalid && blogForm.get('summary')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Content (HTML/Markdown)</mat-label>
+    <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+    <textarea matInput formControlName="content" rows="10" placeholder="Write your blog post here..."></textarea>
+
+    @if(blogForm.get('content')?.invalid && blogForm.get('content')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="published">
+                    Publish immediately
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Blog
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

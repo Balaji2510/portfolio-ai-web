@@ -2,7 +2,7 @@
 
     <div class="image">
 
-        <img [src]="project.image" [alt]="project.title">
+        <img [src]="project.thumbnail" [alt]="project.title">
 
         @if(project.featured){
 
@@ -42,13 +42,13 @@
         </div>
         <div class="actions">
 
-            <a [href]="project.github" target="_blank" class="github">
+            <a [href]="project.githubUrl" target="_blank" class="github">
 
                 GitHub
 
             </a>
 
-            <a [href]="project.liveDemo" target="_blank" class="demo">
+            <a [href]="project.liveUrl" target="_blank" class="demo">
 
                 Live Demo
 

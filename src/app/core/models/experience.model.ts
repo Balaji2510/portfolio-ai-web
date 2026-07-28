@@ -4,15 +4,23 @@ export interface Experience {
 
   company: string;
 
+  companyLogo: string;
+
   designation: string;
 
-  duration: string;
+  startDate: Date;
+
+  endDate?: Date;
 
   location: string;
 
   employmentType: string;
 
+  workMode: string;
+
   technologies: string[];
+
+  description?: string;
 
   responsibilities: string[];
 

@@ -28,7 +28,7 @@
 
     <p>
 
-        {{experience.duration}}
+        {{experience.startDate | date:'MMM yyyy'}} - {{experience.current ? 'Present' : (experience.endDate | date:'MMM yyyy')}}
 
     </p>
 

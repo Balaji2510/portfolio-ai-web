@@ -26,14 +26,6 @@ export class QuickLinks {
     },
 
     {
-      title: 'Resume',
-      description: 'Download my latest resume.',
-      icon: '📄',
-      route: '/resume',
-      external: false
-    },
-
-    {
       title: 'AI Assistant',
       description: 'Ask anything about me.',
       icon: '🤖',

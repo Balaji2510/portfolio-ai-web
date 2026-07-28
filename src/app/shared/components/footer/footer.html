@@ -10,23 +10,20 @@
 
                 <h2>
 
-                    PortfolioAI
+                    {{ settings().siteName || 'Portfolio' }}
 
                 </h2>
 
                 <p>
 
-                    AI-Powered Developer Portfolio showcasing my
-                    expertise in Angular, Node.js, MongoDB, AWS,
-                    GraphQL, Artificial Intelligence and modern
-                    full-stack development.
+                    {{ settings().description || 'AI-Powered Developer Portfolio showcasing my expertise in modern full-stack development.' }}
 
                 </p>
 
                 <div class="social">
 
                     <a
-                        href="https://github.com/Balaji2510"
+                        [href]="settings().github"
                         target="_blank"
                         title="GitHub">
 
@@ -35,7 +32,7 @@
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/balajip2510"
+                        [href]="settings().linkedin"
                         target="_blank"
                         title="LinkedIn">
 
@@ -53,7 +50,7 @@
                     </a>
 
                     <a
-                        href="mailto:balajip2510@gmail.com"
+                        [href]="'mailto:' + settings().email"
                         title="Email">
 
                         <i class="fa-solid fa-envelope"></i>
@@ -88,16 +85,6 @@
 
                     <li>
 
-                        <a routerLink="/about">
-
-                            About
-
-                        </a>
-
-                    </li>
-
-                    <li>
-
                         <a routerLink="/skills">
 
                             Skills
@@ -121,16 +108,6 @@
                         <a routerLink="/projects">
 
                             Projects
-
-                        </a>
-
-                    </li>
-
-                    <li>
-
-                        <a routerLink="/resume">
-
-                            Resume
 
                         </a>
 
@@ -172,7 +149,7 @@
 
                 <div class="chips">
 
-                    @for(item of technologies; track item){
+                    @for(item of technologies(); track item){
 
                         <span>
 
@@ -198,7 +175,7 @@
 
                 <p>
 
-                    📧 balajip2510@gmail.com
+                    📧 {{ settings().email }}
 
                 </p>
 
@@ -210,7 +187,7 @@
 
                 <p>
 
-                    📍 Chennai, Tamil Nadu, India
+                    📍 {{ settings().location }}
 
                 </p>
 
@@ -228,7 +205,7 @@
 
             <p>
 
-                © {{ currentYear }} PortfolioAI. All Rights Reserved.
+                © {{ currentYear }} {{ settings().siteName || 'Portfolio' }}. All Rights Reserved.
 
             </p>
 

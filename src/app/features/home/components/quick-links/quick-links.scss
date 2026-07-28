@@ -2,7 +2,7 @@
 
     padding:100px 20px;
 
-    background:white;
+    background: var(--bg-main);
 
 }
 
@@ -42,7 +42,7 @@
 
 .header p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
 }
 
@@ -58,7 +58,7 @@
 
 .card{
 
-    background:#F8FAFC;
+    background: var(--bg-secondary);
 
     border-radius:20px;
 
@@ -94,7 +94,7 @@
 
 .card p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
     margin-bottom:24px;
 

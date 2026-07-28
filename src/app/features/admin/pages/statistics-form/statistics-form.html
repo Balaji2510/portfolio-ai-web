@@ -1,0 +1,50 @@
+<div class="form-container">
+  <mat-card class="glass-card">
+    <mat-card-header>
+      <mat-card-title>{{ isEdit ? 'Edit Statistic' : 'Add Statistic' }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Icon (Emoji or FontAwesome class)</mat-label>
+            <i matPrefix class="fas fa-icons p-r-2" style="margin-right: 8px;"></i>
+            <input matInput type="text" formControlName="icon" placeholder="e.g. 💼 or fas fa-briefcase">
+            <mat-error *ngIf="form.get('icon')?.hasError('required')">Icon is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Title</mat-label>
+            <i matPrefix class="fas fa-heading p-r-2" style="margin-right: 8px;"></i>
+            <input matInput type="text" formControlName="title" placeholder="e.g. Experience">
+            <mat-error *ngIf="form.get('title')?.hasError('required')">Title is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Value</mat-label>
+            <i matPrefix class="fas fa-hashtag p-r-2" style="margin-right: 8px;"></i>
+            <input matInput type="text" formControlName="value" placeholder="e.g. 3.5+">
+            <mat-error *ngIf="form.get('value')?.hasError('required')">Value is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Description</mat-label>
+            <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+            <input matInput type="text" formControlName="description" placeholder="e.g. Years">
+            <mat-error *ngIf="form.get('description')?.hasError('required')">Description is required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-button type="button" (click)="onCancel()" [disabled]="loading">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || loading">
+            {{ isEdit ? 'Update' : 'Save' }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

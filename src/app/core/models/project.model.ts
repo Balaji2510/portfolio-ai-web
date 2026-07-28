@@ -10,15 +10,15 @@ export interface Project {
 
   shortDescription: string;
 
-  image: string;
+  thumbnail: string;
 
   gallery: string[];
 
   technologies: string[];
 
-  github: string;
+  githubUrl: string;
 
-  liveDemo: string;
+  liveUrl: string;
 
   featured: boolean;
 

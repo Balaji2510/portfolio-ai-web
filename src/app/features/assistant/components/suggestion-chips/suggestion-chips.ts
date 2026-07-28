@@ -12,19 +12,12 @@ export class SuggestionChips {
   selected = new EventEmitter<string>();
 
   suggestions = [
-
-    'Tell me about Balaji',
-
-    'Show your projects',
-
+    'Tell me about yourself',
+    'Show me your projects',
     'What technologies do you know?',
 
-    'Download your resume',
-
     'Explain your experience',
-
     'How can I contact you?'
-
   ];
 
   choose(question: string) {

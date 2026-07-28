@@ -1,0 +1,139 @@
+<div class="form-container" style="max-width: 900px;">
+    <div class="form-header">
+        <h2>Global Site Settings</h2>
+    </div>
+
+    @if (loading()) {
+        <div class="loading-state">
+            <i class="fas fa-spinner fa-spin"></i> Loading settings...
+        </div>
+    } @else {
+        <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()" class="glass-form">
+            
+            @if (errorMessage()) {
+                <div class="error-alert">{{ errorMessage() }}</div>
+            }
+            @if (successMessage()) {
+                <div class="success-alert" style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 12px; border-radius: 8px; margin-bottom: 24px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                    {{ successMessage() }}
+                </div>
+            }
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Owner Name</mat-label>
+    <i matPrefix class="fas fa-user p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="siteName">
+
+    @if(settingsForm.get('siteName')?.invalid && settingsForm.get('siteName')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Tagline</mat-label>
+    <i matPrefix class="fas fa-tags p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="tagline">
+
+    @if(settingsForm.get('tagline')?.invalid && settingsForm.get('tagline')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Portfolio Meta Description (SEO)</mat-label>
+    <i matPrefix class="fas fa-align-left p-r-2" style="margin-right: 8px;"></i>
+    <textarea matInput formControlName="description" rows="3"></textarea>
+
+    @if(settingsForm.get('description')?.invalid && settingsForm.get('description')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <h3 style="color: var(--text-secondary); font-size: 14px; text-transform: uppercase; margin: 32px 0 16px;">Contact Information</h3>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Public Email</mat-label>
+    <i matPrefix class="fas fa-envelope p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="email">
+
+    @if(settingsForm.get('email')?.invalid && settingsForm.get('email')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Phone Number</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="phone">
+
+    @if(settingsForm.get('phone')?.invalid && settingsForm.get('phone')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Location</mat-label>
+    <i matPrefix class="fas fa-map-marker-alt p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="location">
+
+    @if(settingsForm.get('location')?.invalid && settingsForm.get('location')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <h3 style="color: var(--text-secondary); font-size: 14px; text-transform: uppercase; margin: 32px 0 16px;">Social Links</h3>
+
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>GitHub Profile</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="github">
+
+    @if(settingsForm.get('github')?.invalid && settingsForm.get('github')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+                <mat-form-field appearance="outline" class="w-100">
+    <mat-label>LinkedIn Profile</mat-label>
+    <i matPrefix class="fas fa-link p-r-2" style="margin-right: 8px;"></i>
+    <input matInput type="text" formControlName="linkedin">
+
+    @if(settingsForm.get('linkedin')?.invalid && settingsForm.get('linkedin')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Theme</mat-label>
+    <i matPrefix class="fas fa-pen p-r-2" style="margin-right: 8px;"></i>
+    <mat-select formControlName="theme">
+                    <mat-option value="light">Light Mode</mat-option>
+                    <mat-option value="dark">Dark Mode</mat-option>
+                </mat-select>
+
+    @if(settingsForm.get('theme')?.invalid && settingsForm.get('theme')?.touched) {
+        <mat-error>This field is required/invalid</mat-error>
+    }
+</mat-form-field>
+
+            <div class="form-group checkbox-group" style="margin-top: 32px; border-top: 1px solid var(--border-light); padding-top: 24px;">
+                <label style="color: #ef4444;">
+                    <input type="checkbox" formControlName="maintenanceMode">
+                    Enable Maintenance Mode (Hides public site)
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn" [disabled]="submitting()">
+                    @if(submitting()) {
+                        <i class="fas fa-spinner fa-spin"></i> Saving...
+                    } @else {
+                        <i class="fas fa-save"></i> Save Settings
+                    }
+                </button>
+            </div>
+        </form>
+    }
+</div>

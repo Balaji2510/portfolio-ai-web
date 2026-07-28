@@ -1,0 +1,155 @@
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .cancel-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+            
+            &:hover {
+                background: var(--bg-secondary);
+                color: var(--text-primary);
+            }
+        }
+    }
+
+    .glass-form {
+        background: var(--bg-secondary, rgba(255, 255, 255, 0.03));
+        border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+        padding: 40px;
+        border-radius: 24px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(20px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 8px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    mat-form-field.w-100 {
+        width: 100%;
+        margin-bottom: 8px; // Space for errors
+    }
+
+    /* Premium Material Overrides */
+    ::ng-deep {
+        .mdc-text-field--outlined {
+            --mdc-outlined-text-field-container-shape: 30px; // Pill shape rounded inputs
+            --mdc-outlined-text-field-focus-outline-color: var(--accent-primary, #6366f1);
+            --mdc-outlined-text-field-hover-outline-color: rgba(255, 255, 255, 0.5);
+            --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.2);
+        }
+
+        // Fallback for forcing rounded borders on Material Outlined inputs
+        .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+            border-radius: 30px 0 0 30px !important;
+            width: 24px !important; // Gives enough space for the curve
+        }
+        .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+            border-radius: 0 30px 30px 0 !important;
+        }
+
+        .mat-mdc-form-field-flex {
+            background-color: transparent !important;
+            backdrop-filter: none;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            border-radius: 30px !important; // Ensure the flex box itself is also rounded
+            box-shadow: none;
+        }
+
+        .mat-mdc-form-field.mat-focused .mat-mdc-form-field-flex {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+            box-shadow: none;
+        }
+
+        .mat-mdc-form-field-icon-prefix {
+            padding-right: 12px !important;
+            color: var(--text-secondary);
+        }
+
+        .mat-mdc-form-field.mat-focused .mat-mdc-form-field-icon-prefix {
+            color: var(--accent-primary, #6366f1);
+        }
+    }
+
+    .checkbox-group {
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-transform: none;
+            font-size: 15px;
+
+            input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                accent-color: var(--accent-primary);
+            }
+        }
+    }
+
+    .form-actions {
+        margin-top: 32px;
+        display: flex;
+        justify-content: flex-end;
+
+        .submit-btn {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px var(--accent-shadow);
+            transition: all 0.2s;
+
+            &:hover:not([disabled]) {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px var(--accent-shadow);
+            }
+            
+            &:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

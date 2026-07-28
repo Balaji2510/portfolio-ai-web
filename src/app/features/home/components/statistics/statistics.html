@@ -20,13 +20,17 @@
 
         <div class="grid">
 
-            @for(stat of statistics; track stat.title){
+            @for(stat of statistics(); track stat.title){
 
                 <div class="card">
 
                     <div class="icon">
 
-                        {{ stat.icon }}
+                        @if(stat.icon.startsWith('fa')) {
+                            <i [class]="stat.icon"></i>
+                        } @else {
+                            {{ stat.icon }}
+                        }
 
                     </div>
 

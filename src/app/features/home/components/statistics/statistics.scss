@@ -2,7 +2,7 @@
 
     padding:100px 20px;
 
-    background:#F8FAFC;
+    background: var(--bg-secondary);
 
 }
 
@@ -38,13 +38,13 @@
 
     margin:20px 0;
 
-    color:#0F172A;
+    color: var(--text-primary);
 
 }
 
 .header p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
 }
 
@@ -60,7 +60,7 @@
 
 .card{
 
-    background:white;
+    background: var(--bg-main);
 
     border-radius:20px;
 
@@ -106,7 +106,7 @@
 
 .card p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
 }
 

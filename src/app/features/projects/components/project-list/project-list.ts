@@ -1,17 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ProjectFilter } from "../project-filter/project-filter";
 import { ProjectCard } from "../project-card/project-card";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  github: string;
-  liveDemo: string;
-  featured: boolean;
-}
+import { Project } from '../../../../core/models';
+import { ProjectService } from '../../../../core/services/project';
+import { CrudService } from '../../../../core/services/crud.service';
 
 @Component({
   selector: 'app-project-list',
@@ -19,47 +11,24 @@ interface Project {
   templateUrl: './project-list.html',
   styleUrl: './project-list.scss',
 })
-export class ProjectList {
+export class ProjectList implements OnInit {
+  private projectService = inject(ProjectService);
+  private crudService = inject(CrudService);
   
+  allProjects: Project[] = [];
+  projects: Project[] = [];
 
-    allProjects: Project[] = [
+  ngOnInit() {
+    this.crudService.trackAnalytics('projectViews');
 
-    {
-      id: 1,
-      title: 'PortfolioAI',
-      description: 'AI-powered developer portfolio with Angular, Node.js, MongoDB and RAG.',
-      image: 'assets/projects/portfolio-ai.png',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'AI'],
-      github: '#',
-      liveDemo: '#',
-      featured: true
-    },
-
-    {
-      id: 2,
-      title: 'Vendor Management System',
-      description: 'Enterprise vendor management platform with GraphQL and AWS.',
-      image: 'assets/projects/vendor.png',
-      technologies: ['Angular', 'GraphQL', 'AWS'],
-      github: '#',
-      liveDemo: '#',
-      featured: false
-    },
-
-    {
-      id: 3,
-      title: 'Notification System',
-      description: 'Real-time notification platform using AWS AppSync.',
-      image: 'assets/projects/notification.png',
-      technologies: ['AppSync', 'Angular', 'AWS'],
-      github: '#',
-      liveDemo: '#',
-      featured: true
-    }
-
-  ];
-  projects: Project[] = [...this.allProjects];
-
+    this.projectService.getProjects(1, 100).subscribe({
+      next: (res) => {
+        this.allProjects = res.data;
+        this.projects = [...this.allProjects];
+      },
+      error: (err) => console.error('Error fetching projects', err)
+    });
+  }
 
   filterProjects(filter: string) {
 

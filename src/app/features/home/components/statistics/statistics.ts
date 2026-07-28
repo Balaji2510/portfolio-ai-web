@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import { Statistic } from '../../../../core/models';
+import { CrudService } from '../../../../core/services/crud.service';
 
 @Component({
   selector: 'app-statistics',
@@ -7,38 +8,19 @@ import { Statistic } from '../../../../core/models';
   templateUrl: './statistics.html',
   styleUrl: './statistics.scss',
 })
-export class Statistics {
+export class Statistics implements OnInit {
+  private crudService = inject(CrudService);
 
-    statistics: Statistic[] = [
+  statistics = signal<Statistic[]>([]);
 
-    {
-      icon: '💼',
-      title: 'Experience',
-      value: '3.5+',
-      description: 'Years'
-    },
-
-    {
-      icon: '🚀',
-      title: 'Projects',
-      value: '20+',
-      description: 'Completed'
-    },
-
-    {
-      icon: '💻',
-      title: 'Technologies',
-      value: '15+',
-      description: 'Worked With'
-    },
-
-    {
-      icon: '🤖',
-      title: 'AI Apps',
-      value: '5+',
-      description: 'Built'
-    }
-
-  ];
-
+  ngOnInit() {
+    this.crudService.getAll('statistics').subscribe({
+      next: (res) => {
+        if (res.success && res.data) {
+          this.statistics.set(res.data);
+        }
+      },
+      error: () => {}
+    });
+  }
 }

@@ -26,7 +26,7 @@ email:'balaji@example.com',
 
 phone:'+91 XXXXX XXXXX',
 
-profileImage:'assets/images/Balaji_Photo.jpg',
+profileImage:'assets/images/profile.jpg',
 
 yearsOfExperience:3.5
 

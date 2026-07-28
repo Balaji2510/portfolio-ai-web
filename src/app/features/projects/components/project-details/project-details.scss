@@ -48,7 +48,7 @@
 
 .header p{
 
-    color:#64748B;
+    color: var(--text-muted);
 
     line-height:1.8;
 
@@ -90,7 +90,7 @@
 
 .info div{
 
-    background:#F8FAFC;
+    background: var(--bg-secondary);
 
     padding:25px;
 
