@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 export interface TableColumn {
   key: string;
   label: string;
-  type?: 'text' | 'image' | 'date' | 'badge';
+  type?: 'text' | 'image' | 'date' | 'badge' | 'icon';
 }
 
 @Component({
