@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SkeletonLoader } from '../skeleton-loader/skeleton-loader';
 
 export interface TableColumn {
   key: string;
@@ -10,7 +11,7 @@ export interface TableColumn {
 @Component({
   selector: 'app-data-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SkeletonLoader],
   templateUrl: './data-table.html',
   styleUrl: './data-table.scss'
 })

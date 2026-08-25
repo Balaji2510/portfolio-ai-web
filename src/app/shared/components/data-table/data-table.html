@@ -8,9 +8,7 @@
 
     <div class="table-wrapper">
         @if (loading) {
-            <div class="loading-state">
-                <i class="fas fa-spinner fa-spin"></i> Loading...
-            </div>
+            <app-skeleton-loader type="table" [rows]="5" [columns]="columns.length + 1"></app-skeleton-loader>
         } @else if (data.length === 0) {
             <div class="empty-state">
                 <i class="fas fa-inbox"></i> No records found.

@@ -25,11 +25,15 @@
 
     <div class="grid">
 
-        @for(project of projects; track project.id){
+        @if (isLoading) {
+            <app-skeleton-loader type="card" [rows]="3"></app-skeleton-loader>
+        } @else {
+            @for(project of projects; track project.id){
 
-        <app-project-card [project]="project">
-        </app-project-card>
+            <app-project-card [project]="project">
+            </app-project-card>
 
+            }
         }
 
     </div>

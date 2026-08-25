@@ -1,0 +1,114 @@
+.skeleton-container {
+  width: 100%;
+}
+
+.skeleton-shimmer {
+  background: var(--bg-tertiary);
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 0px,
+    rgba(255, 255, 255, 0.05) 40px,
+    var(--bg-tertiary) 80px
+  );
+  background-size: 600px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+body[data-theme="light"] .skeleton-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 0px,
+    rgba(0, 0, 0, 0.05) 40px,
+    var(--bg-tertiary) 80px
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -300px;
+  }
+  100% {
+    background-position: 300px;
+  }
+}
+
+/* Table Skeleton */
+.skeleton-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.skeleton-table-header {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-light);
+  .skeleton-table-cell {
+    height: 24px;
+    flex: 1;
+  }
+}
+
+.skeleton-table-row {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  .skeleton-table-cell {
+    height: 20px;
+    flex: 1;
+    &:last-child {
+      flex: 0.5;
+    }
+  }
+}
+
+/* Card Skeleton */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--border-light);
+  
+  .skeleton-img {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--radius-md);
+  }
+  
+  .skeleton-title {
+    height: 28px;
+    width: 70%;
+  }
+  
+  .skeleton-text {
+    height: 16px;
+    width: 100%;
+    
+    &.short {
+      width: 40%;
+    }
+  }
+}
+
+/* Text Skeleton */
+.skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+  
+  &:last-child {
+    width: 80%;
+  }
+}

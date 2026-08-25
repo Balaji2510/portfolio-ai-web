@@ -1,1 +1,39 @@
-<p>skeleton-loader works!</p>
+<div class="skeleton-container" [ngClass]="type">
+  
+  @if (type === 'table') {
+    <div class="skeleton-table">
+      <div class="skeleton-table-header">
+        @for (col of getArray(columns); track $index) {
+          <div class="skeleton-shimmer skeleton-table-cell"></div>
+        }
+      </div>
+      @for (row of getArray(rows); track $index) {
+        <div class="skeleton-table-row">
+          @for (col of getArray(columns); track $index) {
+            <div class="skeleton-shimmer skeleton-table-cell"></div>
+          }
+        </div>
+      }
+    </div>
+  }
+
+  @if (type === 'card') {
+    <div class="skeleton-grid">
+      @for (card of getArray(rows); track $index) {
+        <div class="skeleton-card">
+          <div class="skeleton-shimmer skeleton-img"></div>
+          <div class="skeleton-shimmer skeleton-title"></div>
+          <div class="skeleton-shimmer skeleton-text"></div>
+          <div class="skeleton-shimmer skeleton-text short"></div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (type === 'text') {
+    @for (line of getArray(rows); track $index) {
+      <div class="skeleton-shimmer skeleton-text"></div>
+    }
+  }
+
+</div>

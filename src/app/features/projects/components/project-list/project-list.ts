@@ -4,10 +4,11 @@ import { ProjectCard } from "../project-card/project-card";
 import { Project } from '../../../../core/models';
 import { ProjectService } from '../../../../core/services/project';
 import { CrudService } from '../../../../core/services/crud.service';
+import { SkeletonLoader } from '../../../../shared/components/skeleton-loader/skeleton-loader';
 
 @Component({
   selector: 'app-project-list',
-  imports: [ProjectFilter, ProjectCard],
+  imports: [ProjectFilter, ProjectCard, SkeletonLoader],
   templateUrl: './project-list.html',
   styleUrl: './project-list.scss',
 })
@@ -17,6 +18,7 @@ export class ProjectList implements OnInit {
   
   allProjects: Project[] = [];
   projects: Project[] = [];
+  isLoading = true;
 
   ngOnInit() {
     this.crudService.trackAnalytics('projectViews');
@@ -25,8 +27,12 @@ export class ProjectList implements OnInit {
       next: (res) => {
         this.allProjects = res.data;
         this.projects = [...this.allProjects];
+        this.isLoading = false;
       },
-      error: (err) => console.error('Error fetching projects', err)
+      error: (err) => {
+        console.error('Error fetching projects', err);
+        this.isLoading = false;
+      }
     });
   }
 
