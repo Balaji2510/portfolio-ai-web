@@ -1,9 +1,10 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CrudService } from '../../../../core/services/crud.service';
+import { SkeletonLoader } from '../../../../shared/components/skeleton-loader/skeleton-loader';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [SkeletonLoader],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
@@ -11,6 +12,7 @@ export class Hero implements OnInit {
   private crudService = inject(CrudService);
 
   settings = signal<any>(null);
+  isLoading = signal<boolean>(true);
 
    readonly stats = [
     {
@@ -38,6 +40,10 @@ export class Hero implements OnInit {
           this.settings.set(res.data);
           // dynamically update stats if needed
         }
+        this.isLoading.set(false);
+      },
+      error: () => {
+        this.isLoading.set(false);
       }
     });
   }

@@ -20,9 +20,12 @@
 
         <div class="grid">
 
-            @for(stat of statistics(); track stat.title){
+            @if (isLoading()) {
+                <app-skeleton-loader type="card" [rows]="4"></app-skeleton-loader>
+            } @else {
+                @for(stat of statistics(); track stat.title){
 
-                <div class="card">
+                    <div class="card">
 
                     <div class="icon">
 
@@ -54,6 +57,7 @@
 
                 </div>
 
+            }
             }
 
         </div>

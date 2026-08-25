@@ -4,31 +4,27 @@
 
         <div class="left">
 
-            <span class="badge">
-                👋 Welcome to my portfolio
-            </span>
+            @if (isLoading()) {
+                <app-skeleton-loader type="text" [rows]="4"></app-skeleton-loader>
+            } @else {
+                <span class="badge">
+                    👋 Welcome to my portfolio
+                </span>
 
-            <h1>
+                <h1>
+                    Hi,
+                    I'm
+                    <span>{{ settings()?.siteName  }}</span>
+                </h1>
 
-                Hi,
+                <h2>
+                    {{ settings()?.tagline }}
+                </h2>
 
-                I'm
-
-                <span>{{ settings()?.siteName  }}</span>
-
-            </h1>
-
-            <h2>
-
-                {{ settings()?.tagline }}
-
-            </h2>
-
-            <p>
-
-                {{ settings()?.description  }}
-
-            </p>
+                <p>
+                    {{ settings()?.description  }}
+                </p>
+            }
 
             <div class="buttons">
 
@@ -92,16 +88,20 @@
 
     <div class="container">
 
-        @for(stat of stats; track stat.label){
+        @if (isLoading()) {
+            <app-skeleton-loader type="table" [columns]="4" [rows]="1"></app-skeleton-loader>
+        } @else {
+            @for(stat of stats; track stat.label){
 
-        <div class="card">
+            <div class="card">
 
-            <h2>{{stat.value}}</h2>
+                <h2>{{stat.value}}</h2>
 
-            <p>{{stat.label}}</p>
+                <p>{{stat.label}}</p>
 
-        </div>
+            </div>
 
+            }
         }
 
     </div>
