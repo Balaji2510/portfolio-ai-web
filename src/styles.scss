@@ -63,3 +63,8 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
+
+/* Global Form Field Styles */
+input, textarea, select {
+  color: #000000;
+}
