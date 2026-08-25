@@ -5,10 +5,7 @@
     </div>
 
     @if(loading()) {
-        <div class="loading-state">
-            <i class="fas fa-spinner fa-spin"></i>
-            <p>Loading analytics...</p>
-        </div>
+        <app-skeleton-loader type="card" [rows]="5"></app-skeleton-loader>
     } @else {
         @if(dashboardData()) {
             <div class="stats-grid">

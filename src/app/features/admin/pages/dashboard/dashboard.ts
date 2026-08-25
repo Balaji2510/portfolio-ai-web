@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, inject, signal } from '@angular/core';
 import { DashboardService } from '../../../../core/services/dashboard';
+import { SkeletonLoader } from '../../../../shared/components/skeleton-loader/skeleton-loader';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [SkeletonLoader],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
